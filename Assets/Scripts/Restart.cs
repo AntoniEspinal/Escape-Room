@@ -9,7 +9,7 @@ public class Restart : MonoBehaviour
 {
     public TextMeshProUGUI gameOverText;
     public bool isGameActive;
-    public Button restartButton;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +29,10 @@ public class Restart : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        isGameActive = false;
-        restartButton.gameObject.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartGame();  
+        }  
     }
+    
 }
