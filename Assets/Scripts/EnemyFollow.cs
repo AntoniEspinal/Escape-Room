@@ -20,7 +20,7 @@ public class EnemyFollow : MonoBehaviour
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         enemyRb.AddForce(lookDirection * speed * Time.deltaTime);
         transform.LookAt(player);
-        transform.LookAt(player, Vector3.left);
+        transform.LookAt(player, Vector3.up);
 
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, player.position, step);

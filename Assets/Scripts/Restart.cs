@@ -19,20 +19,16 @@ public class Restart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            RestartGame();
+        }
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GameOver()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartGame();  
-        }  
-    }
     
 }
